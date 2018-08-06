@@ -1,5 +1,7 @@
 
 import Vue from 'vue'
+import { Button, Cell } from 'mint-ui'
+
 
 
 import UITitleBox from '../components/commons/UITitleBox.vue'
@@ -23,3 +25,8 @@ Vue.component('good-common-item', GoodCommonItem)
 Vue.component('app-nav', AppNav)
 Vue.component('app-header', AppHeader)
 Vue.component('category-list', CategoryList)
+
+
+//mint-ui
+Vue.component(Button.name, Button)
+Vue.component(Cell.name, Cell)

@@ -1,11 +1,13 @@
 <template>
     <ul class="category-list">
-        <li 
+        <router-link 
+            tag = "li"
+            :to = "{name: 'list-two', params: { category_id: item.id }}"
             v-for = "item in data"
             :key = "item.id"
         class="category-item">
             {{item.name}}
-        </li>
+        </router-link>
     </ul>
 </template>
 <script>

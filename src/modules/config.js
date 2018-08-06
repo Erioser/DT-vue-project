@@ -19,9 +19,18 @@ Vue.prototype.$http = axios
 
 import './filters'
 
+//全局自定义指令
+
+import './directive'
+
 //全局组件
 
 import './ui-components'
+
+//mint-ui相关
+import { Lazyload } from 'mint-ui';
+
+Vue.use(Lazyload);
 
 //cookies
 import VueCookies from 'vue-cookies'

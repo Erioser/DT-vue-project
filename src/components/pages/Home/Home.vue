@@ -1,7 +1,6 @@
 <template>
   <div id="app-home" class="page page-bottom">
-    home
-    <!-- <app-home-banner></app-home-banner> -->
+    <app-home-banner></app-home-banner>
     <!-- <app-home-nav-list></app-home-nav-list> -->
     <!-- <app-home-update></app-home-update> -->
     <!-- <app-home-special></app-home-special> -->

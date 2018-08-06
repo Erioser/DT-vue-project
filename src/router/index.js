@@ -10,6 +10,7 @@ import Classify from '../components/pages/Classify/Classify'
 import Mine from '../components/pages/Mine/Mine'
 import Login from '../components/pages/Login/Login'
 import ListOne from '../components/pages/List/ListOne'
+import ListTwo from '../components/pages/List/ListTwo'
 
 import store from '../store'
 
@@ -33,7 +34,8 @@ const routes = [
         // }
     },
     { path: '/login', name: 'login', component: Login },
-    { path: '/list-one/:category_id', name: 'list-one', component: ListOne }
+    { path: '/list-one/:category_id', name: 'list-one', component: ListOne },
+    { path: '/list-two/:category_id', name: 'list-two', component: ListTwo }
 ]
 
 const router = new VueRouter({
