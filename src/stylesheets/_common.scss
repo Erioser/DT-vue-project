@@ -1,0 +1,20 @@
+
+.page, html {
+    background: #f5f5f5;
+    
+}
+
+.page-bottom {
+    padding-bottom: 0.6rem;
+}
+
+.page-top {
+    padding-top:0.5rem;
+}
+
+.loading-img {
+    background-image: url(/static/images/loading-img.gif);
+    background-position:center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
