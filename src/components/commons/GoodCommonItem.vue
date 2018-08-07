@@ -1,5 +1,5 @@
 <template>
-    <div class="good-common-item">
+    <router-link :to = "{name: 'detail', params: {inventory_id: data.id}}" tage = "div" class="good-common-item">
         <div class="img-box loading-img">
             <img :src="data.pictures[0] | formatImage('middle')" alt="">
         </div>
@@ -7,7 +7,7 @@
         <p class="desc">{{data.inventory_name}}</p>
         <p class="sale">已售 {{data.sold_quantity}}</p>
         <div class="price">￥{{data.sale_price}}</div>
-    </div>
+    </router-link>
 </template>
 <script>
 export default {

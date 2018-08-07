@@ -1,0 +1,5 @@
+
+
+const CHANGE_CART_GOODS = 'CHANGE_CART_GOODS'
+
+export  { CHANGE_CART_GOODS }

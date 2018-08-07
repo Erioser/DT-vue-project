@@ -4,7 +4,8 @@ import md5 from 'js-md5'
 import { 
     CHANGE_USER_STATE, 
     CHANGE_USER_INFO,
-    CHANGE_CATEGORY_LIST
+    CHANGE_CATEGORY_LIST,
+    CHANGE_DETAIL_COMMON_INFO
  } from './const'
 const actions  = {
     action_login (context, { code, phone, success, fail }) {
@@ -15,9 +16,9 @@ const actions  = {
             password: md5(code),
             username: phone
         }).then(res => {
-            if (res.data.status === -23104) {
-                fail()
-            }else {
+            // if (res.data.status === -23104) {
+            //     fail()
+            // }else {
                 //更改state的数据，所以要调用mutations的方法
                 context.commit({
                     type: CHANGE_USER_STATE,
@@ -26,7 +27,7 @@ const actions  = {
                 //获取了用户名等信息
                 this.dispatch('action_get_user_info')
                 success(res.data.data.data)              
-            }
+            // }
         })
     },
     action_get_user_info (context ) {
@@ -46,6 +47,34 @@ const actions  = {
                 category_list
             })
         })
+    },
+    action_get_detail_common_info (context) {
+        let num = 0
+        let fhtz = '';
+        let gmxz = '';
+        axios.get('/dt/guide/youliao/urgentNotice/').then(res => {
+            //发货通知
+            fhtz = res.data
+            judgeIsDone()
+            
+        })
+        axios.get('/dt/guide/youliao/normalGoodsIntroNew/').then(res => {
+            //购买须知
+            gmxz = res.data
+            judgeIsDone()
+        })
+
+        function judgeIsDone() {
+            num ++;
+            if ( num === 2 ) {
+                context.commit({
+                    type: CHANGE_DETAIL_COMMON_INFO,
+                    fhtz, gmxz
+                })
+            }
+        }
+
+        
     }
 }
 

@@ -5,7 +5,8 @@ const state = {
 
     user_state: getUserStateFromCookies(),
     user_info: null,
-    category_list: null
+    category_list: null,
+    detail_common_info: null
 
 }
 

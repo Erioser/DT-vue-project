@@ -11,6 +11,8 @@ import Mine from '../components/pages/Mine/Mine'
 import Login from '../components/pages/Login/Login'
 import ListOne from '../components/pages/List/ListOne'
 import ListTwo from '../components/pages/List/ListTwo'
+import Detail from '../components/pages/Detail/Detail'
+import Cart from '../components/pages/Cart/Cart'
 
 import store from '../store'
 
@@ -34,6 +36,8 @@ const routes = [
         // }
     },
     { path: '/login', name: 'login', component: Login },
+    { path: '/cart', name: 'cart', component: Cart },
+    { path: '/detail/:inventory_id', name: 'detail', component: Detail },
     { path: '/list-one/:category_id', name: 'list-one', component: ListOne },
     { path: '/list-two/:category_id', name: 'list-two', component: ListTwo }
 ]

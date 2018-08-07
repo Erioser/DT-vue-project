@@ -47,7 +47,8 @@ export default {
                             this.$cookies.set(key,element,"7d","/"); 
                         }
                     }
-
+                    //登录之后去获取一下用户的购物车信息
+                    this.$store.dispatch('action_get_user_cart')
                     this.$router.push('/mine')
                 },
                 fail: () => {
