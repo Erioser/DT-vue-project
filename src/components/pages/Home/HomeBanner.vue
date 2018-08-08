@@ -24,7 +24,7 @@ export default {
   },
   methods: {
         getBanners () {
-            this.$http.get('/dt/napi/ad/banner/list/', {
+            this.$http.get(this.server_config.dt + '/napi/ad/banner/list/', {
                 params: {
                         ad_id: 'COM001',
                         limit: 5,

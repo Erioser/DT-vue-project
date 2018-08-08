@@ -57,7 +57,7 @@ export default {
             })
         },
         sendCode() { //发送验证码了
-            this.$http.post('/mz/v4/api/code?__t=' + Date.now(), {
+            this.$http.post(this.server_config.mz + '/v4/api/code?__t=' + Date.now(), {
                 mobile: this.phone,
                 type: "2"
             }).then(res => {

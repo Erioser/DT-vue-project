@@ -18,7 +18,7 @@ export default {
     },
     methods: {
         getInfos () {
-            this.$http.get('/dt/napi/buy/index/module/info/?type=3,4,7&timestamp=1533018643000').then(res => {
+            this.$http.get(this.server_config.dt + '/napi/buy/index/module/info/?type=3,4,7&timestamp=1533018643000').then(res => {
                 console.log(res.data)
                 this.infos = res.data.data.object_list
             })

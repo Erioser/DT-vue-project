@@ -25,7 +25,7 @@ export default {
     },
     methods: {
         getRecommonds () {
-            this.$http.get('/dt/napi/buy/inventory/list/by_cat/recommend/?timestamp=1533085976000').then(res => {
+            this.$http.get(this.server_config.dt + '/napi/buy/inventory/list/by_cat/recommend/?timestamp=1533085976000').then(res => {
                 this.recommonds = res.data.data.object_list
             })
         }

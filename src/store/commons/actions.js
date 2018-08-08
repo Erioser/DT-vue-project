@@ -1,6 +1,7 @@
 
 import axios from 'axios'
 import md5 from 'js-md5'
+import { mz, dt } from '../../modules/server-config'
 import { 
     CHANGE_USER_STATE, 
     CHANGE_USER_INFO,
@@ -9,7 +10,7 @@ import {
  } from './const'
 const actions  = {
     action_login (context, { code, phone, success, fail }) {
-        axios.post('/mz/v4/api/login?__t=' + Date.now, {
+        axios.post(mz + '/v4/api/login?__t=' + Date.now, {
             code: "",
             codeKey: "",
             loginType: 1,
@@ -31,7 +32,7 @@ const actions  = {
         })
     },
     action_get_user_info (context ) {
-        axios.get('/mz/v4/api/me?__t=' + Date.now()).then(res =>{
+        axios.get(mz + '/v4/api/me?__t=' + Date.now()).then(res =>{
             let user_info = { nickname: '李二狗' }
             context.commit({
                 type: CHANGE_USER_INFO,
@@ -40,7 +41,7 @@ const actions  = {
         })
     },
     action_get_category_list (context) {
-        axios.get('/dt/napi/buy/category/list/?timestamp=' + Date.now()).then(res => {
+        axios.get(dt + '/napi/buy/category/list/?timestamp=' + Date.now()).then(res => {
             let category_list = res.data.data.object_list
             context.commit({
                 type: CHANGE_CATEGORY_LIST,
@@ -52,13 +53,13 @@ const actions  = {
         let num = 0
         let fhtz = '';
         let gmxz = '';
-        axios.get('/dt/guide/youliao/urgentNotice/').then(res => {
+        axios.get(dt + '/guide/youliao/urgentNotice/').then(res => {
             //发货通知
             fhtz = res.data
             judgeIsDone()
             
         })
-        axios.get('/dt/guide/youliao/normalGoodsIntroNew/').then(res => {
+        axios.get(dt + '/guide/youliao/normalGoodsIntroNew/').then(res => {
             //购买须知
             gmxz = res.data
             judgeIsDone()

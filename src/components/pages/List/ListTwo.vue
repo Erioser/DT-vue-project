@@ -45,7 +45,7 @@ export default {
     methods: {
         getGoods (clear) {// clear是否需要清空原数据
             this.isloading = true
-            this.$http.get('/dt/napi/buy/inventory/list/by_datasource/', {
+            this.$http.get(this.server_config.dt + '/napi/buy/inventory/list/by_datasource/', {
                 params: {
                     limit: this.limit,
                     start: this.start,

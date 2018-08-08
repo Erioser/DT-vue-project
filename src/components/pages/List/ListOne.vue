@@ -47,7 +47,7 @@ export default {
                 spinnerType: 'fading-circle'
             });
             this.isloading = true
-            this.$http.get('/dt/napi/buy/inventory/list/by_datasource/', {
+            this.$http.get(this.server_config.dt + '/napi/buy/inventory/list/by_datasource/', {
                 params: {
                     sort_by: this.sort_by,//确定排序规则
                     sort_type: 'desc',//排序方式 降序

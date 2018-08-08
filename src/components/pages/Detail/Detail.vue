@@ -27,6 +27,7 @@
 
 <script>
 import { mapState } from 'vuex'
+
 export default {
     name: 'app-detail',
     data () {
@@ -38,7 +39,7 @@ export default {
     computed: mapState(['commons', 'cart']),
     methods: {
         getGoodDetail () {
-            this.$http.get('/dt/napi/buy/spu/detail/', {
+            this.$http.get(this.server_config.dt + '/napi/buy/spu/detail/', {
                 params: {
                     inventory_id: this.$route.params.inventory_id,
                     timestamp: Date.now()

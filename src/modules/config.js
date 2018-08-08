@@ -42,7 +42,9 @@ Vue.prototype.$cookies.clear = function () {
         this.remove(key)
     });
 }
-
+// server-config
+import  server_config  from './server-config'
+Vue.prototype.server_config = server_config
 //md5
 
 import md5 from 'js-md5'

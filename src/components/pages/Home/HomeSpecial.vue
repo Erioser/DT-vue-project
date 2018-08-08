@@ -21,10 +21,10 @@ export default {
     },
     methods: {
         getSpecials () {
-            this.$http.get('/dt/napi/buy/index/popular/list/?limit=5&start=0&timestamp=1533021994000').then(res => {
+            this.$http.get(this.server_config.dt + '/napi/buy/index/popular/list/?limit=5&start=0&timestamp=1533021994000').then(res => {
                 this.specials = this.specials.concat(res.data.data.object_list)
             })
-            this.$http.get('/dt/napi/buy/index/popular/list/?limit=5&start=5&timestamp=1533023345000').then(res => {
+            this.$http.get(this.server_config.dt + '/napi/buy/index/popular/list/?limit=5&start=5&timestamp=1533023345000').then(res => {
                 this.specials = this.specials.concat(res.data.data.object_list)
             })
         }
